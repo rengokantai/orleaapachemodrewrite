@@ -102,3 +102,20 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* /404.html [L]
 ```
+######RewriteCond Directive - Part 2
+blocking -403
+```
+RewriteCond %[HTTP_USER_AGENT} ^Bot.*$ [OR]
+RewriteCond %[HTTP_USER_AGENT} ^mailto:bad@bot.com$ [OR]
+RewriteCond %[HTTP_USER_AGENT} .....   //allowed
+RewriteRule .* - [F]
+```
+######RewriteBase And Options
+```
+RewriteBase /subfolder
+RrewriteRule ^index\.html$ /ke.html [L]
+```
+same as
+```
+RrewriteRule ^index\.html$ /subfolder/ke.html [L]
+```
