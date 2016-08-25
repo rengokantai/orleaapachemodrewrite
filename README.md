@@ -53,3 +53,13 @@ a2ensite ke.com.conf
 then change hosts file.
 
 ###### mod_rewrite Variables
+```
+${SERVER_NAME}
+%{HOST}
+%{REQUEST_URI}
+%{QUERY_STRING}
+%{HTTP_POST}
+%{HTTP_REFERER}
+%{SSL_PROTOCOL}
+```
+[see cheatsheet](http://www.askapache.com/htaccess/mod_rewrite-variables-cheatsheet.html)
