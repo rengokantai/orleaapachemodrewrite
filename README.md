@@ -62,4 +62,30 @@ ${SERVER_NAME}
 %{HTTP_REFERER}
 %{SSL_PROTOCOL}
 ```
-[see cheatsheet](http://www.askapache.com/htaccess/mod_rewrite-variables-cheatsheet.html)
+[see cheatsheet](http://www.askapache.com/htaccess/mod_rewrite-variables-cheatsheet.html)  
+another .htaccess: [L] = last rewrite rule.
+```
+RewriteEngine On
+RewriteRule ^index\.html$ http://ke.com [L]
+```
+#######RewriteRule Directive
+```
+RewriteEngine
+RewriteRule
+```
+others:
+```
+RewriteCond
+RewriteOptions
+RewriteBase
+RewriteMap
+Flags
+```
+example:use another folder's file
+```
+RewriteRule ^boats/1$ ../ke.com/boats/1 [L]
+```
+use backreference
+```
+RewriteRule ^boats/([0-9]+)$ http://ke.com/boats/$1 [L]
+```
