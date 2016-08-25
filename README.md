@@ -119,3 +119,15 @@ same as
 ```
 RrewriteRule ^index\.html$ /subfolder/ke.html [L]
 ```
+
+
+
+#####Advanced Rewriting Solutions
+######Rewrite Logging
+.htaccess
+```
+RewriteEngine On
+LogLevel elert rewrite:trace3
+```
+level:  
+emerg>alert>crit>error>warn>notice>info>debug  
