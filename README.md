@@ -89,3 +89,16 @@ use backreference
 ```
 RewriteRule ^boats/([0-9]+)$ http://ke.com/boats/$1 [L]
 ```
+######RewriteCond Directive - Part 1
+```
+RewriteCond %{HTTP_HOST} ^www\.my(\w+)\.com$ [NC]  //case insensitive
+RewriteCond %1 !^boats$
+RewriteCond %{REQUEST_FILENAME} /index\.html$ [NC]
+RewriteRule ^([a-zA-Z]+)/(\d+)$ http://myke.com/prod/$1/$2 [C]
+```
+error page. If a file is not file or not dict, then 404 page
+```
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /404.html [L]
+```
