@@ -42,3 +42,14 @@ in .htaccess
 ```
 Redirect www.ke.com ke.com
 ```
+
+
+#####Rewrite Directives
+######vHost Setup
+```
+cd /etc/apache2/sites-avaliable
+a2ensite ke.com.conf
+```
+then change hosts file.
+
+###### mod_rewrite Variables
